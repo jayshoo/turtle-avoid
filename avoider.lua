@@ -7,9 +7,32 @@ smooth = 14
 dirt = 15
 gravel = 16
 
-
-print("enter GO to begin, else to refuel")
-print("load stone,dirt,gravel in 14,15,16")
+-- TODO: combine settings and memory
+if fs.exists("settings") then
+  fp = fs.open("settings", "r")
+  quarryX = tonumber(fp.readLine())
+  quarryZ = tonumber(fp.readLine())
+  fp.close()
+else
+  print("QUARRY SETUP")
+  print("how wide across? ")
+  quarryX = tonumber(read())
+  print("how away-from-you? ")
+  quarryZ = tonumber(read())
+  
+  fp = fs.open("settings", "w")
+  fp.writeLine(quarryX)
+  fp.writeLine(quarryZ)
+  fp.close()
+  
+  print()
+  print("load stone, dirt, gravel in 14,15,16!!")
+  perLevel = quarryX*quarryZ
+  coalCost = perLevel/80
+  cokeCost = perLevel/320
+  print("coal/lvl: ",coalCost,"  coke/lvl: ",cokeCost)
+  print("press ENTER to refuel from slot1 and BEGIN")
+end
 
 turtle.select(1)
 turtle.refuel(64)
