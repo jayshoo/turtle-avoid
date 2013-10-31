@@ -15,9 +15,9 @@ if fs.exists("settings") then
   fp.close()
 else
   print("QUARRY SETUP")
-  print("how wide across? ")
+  print("how wide across? MUST BE ODD ")
   quarryX = tonumber(read())
-  print("how away-from-you? ")
+  print("how away-from-you? MUST BE ODD ")
   quarryZ = tonumber(read())
   
   fp = fs.open("settings", "w")
