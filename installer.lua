@@ -7,6 +7,7 @@ function dl(file, target)
   -- if one argument, default to same filename
   if not target then target = file end
   
+  print("getting "..file.."...")
   url = prefix..file..".lua"
   resp = http.get(url)
   
