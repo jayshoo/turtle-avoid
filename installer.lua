@@ -7,7 +7,7 @@ function dl(file, target)
   -- if one argument, default to same filename
   if not target then target = file end
   
-  url = prefix..file
+  url = prefix..file..".lua"
   resp = http.get(url)
   
   file = fs.open(target, "w")
