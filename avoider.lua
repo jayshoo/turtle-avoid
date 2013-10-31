@@ -28,10 +28,15 @@ else
   print()
   print("load stone, dirt, gravel in 14,15,16!!")
   perLevel = quarryX*quarryZ
-  coalCost = perLevel/80
-  cokeCost = perLevel/320
-  print("coal/lvl: ",coalCost,"  coke/lvl: ",cokeCost)
-  print("press ENTER to refuel from slot1 and BEGIN")
+  coalCostPerTen = perLevel/80*10
+  cokeCostPerTen = perLevel/320*10
+  print("coal/10y: ",coalCostPerTen)
+  print("coke/10y: ",cokeCostPerTen)
+  print("press ENTER to refuel(slot1) and BEGIN")
+  print("otherwise MINE THE TURTLE")
+  
+  read()
+  print()
 end
 
 turtle.select(1)
